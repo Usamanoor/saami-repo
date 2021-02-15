@@ -1,0 +1,14 @@
+.header {
+    background-color: black;
+    color: blanchedalmond;
+    text-align: center;
+    padding: 50px;
+}
+
+.header1{
+    background-color: cadetblue;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+}

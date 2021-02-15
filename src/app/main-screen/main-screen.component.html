@@ -1,0 +1,36 @@
+
+<h1 class="header">Studend Portal</h1>
+<h1> <a [routerLink]="['teacher']">New Module</a></h1>
+
+<div class="container-fluid my-2">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://image.flaticon.com/icons/png/512/67/67902.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Student Login</h5>
+                  <form [formGroup]="studenCredential">
+                  <label>Email: </label>
+                  <input formControlName="semail" class="form-control my-2" placeholder="name@example.com"/>
+                </form>
+                  <button (click)="getEmail()" class="btn btn-primary">Login</button>
+                </div>
+              </div>
+        </div>
+
+        
+
+        <div class="col-lg-6">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://cdn0.iconfinder.com/data/icons/man-user-human-profile-avatar-business-person/100/09B-1User-512.png" 
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Admin Login</h5>
+                  <label>Email: </label>
+                  <input class="form-control my-2" placeholder="name@example.com"/>
+                    <a [routerLink]="['main']" class="btn btn-primary">Login</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

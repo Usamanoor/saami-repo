@@ -1,0 +1,138 @@
+<div class="my-2">
+    <h1 class="header">Instructor Form</h1>
+    <div class="card shadow my-5">
+      <form [formGroup]="instructor"  class="mx-2 my-3 ">
+        <div class="form-row my-4">
+          <div class="col">
+            <label>FirstName: </label>
+            <input
+              type="text"
+              formControlName="fname"
+              class="form-control"
+              placeholder="first name"
+            />
+            <div *ngIf="instructor.controls['fname'].touched">
+                <p class="alert alert-danger" *ngIf="instructor.controls['fname'].hasError('required')">Name is Required!</p>
+            </div>
+          </div>
+          <div class="col">
+            <label>LastName: </label>
+            <input
+              type="text"
+              formControlName="lname"
+              class="form-control"
+              placeholder="Last name"
+            />
+            <div *ngIf="instructor.controls['lname'].touched">
+              <p class="alert alert-danger" *ngIf="instructor.controls['lname'].hasError('required')">Name is Required!</p>
+          </div>
+          </div>
+        <!-- </div> -->
+        </div>
+        <div class="form-row my-4">
+          <div class="col">
+            <label>Address: </label>
+            <input
+              type="text"
+              formControlName="address"
+              class="form-control"
+              placeholder="address"
+            />
+            <div *ngIf="instructor.controls['address'].touched">
+              <p class="alert alert-danger" *ngIf="instructor.controls['address'].hasError('required')">Address is Required!</p>
+          </div>
+          </div>
+          <div class="col">
+            <label>Email: </label>
+            <input
+              type="text"
+              formControlName="email"
+              class="form-control"
+              placeholder="email"
+            />
+            <div *ngIf="instructor.controls['email'].touched">
+              <p class="alert alert-danger" *ngIf="instructor.controls['email'].hasError('required')">Email is Required!</p>
+          </div>
+          </div>
+        </div>
+        <div class="form-row my-4">
+          <div class="col">
+            <label>Phone: </label>
+            <input
+              type="number"
+              formControlName="phone"
+              class="form-control"
+              placeholder="phone no"
+            />
+            <div *ngIf="instructor.controls['phone'].touched">
+              <p class="alert alert-danger" *ngIf="instructor.controls['phone'].hasError('required')">Phone number is Required!</p>
+          </div>
+          </div>
+        </div>
+        <div class="form-row my-4">
+          <div class="col">
+            <label>Gender: </label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  formControlName="gender"
+                  class="form-check-input"
+                  name="gender"
+                  value="male"
+                />Male
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input
+                  type="radio"
+                  formControlName="gender"
+                  class="form-check-input"
+                  name="gender"
+                  value="female"
+                />Female
+              </label>
+            </div>
+          </div>
+          <div class="col">
+            <label>Class: </label>
+            <select formControlName="class" class="form-control">
+              <option>9th</option>
+              <option>10th</option>
+              <option>11th</option>
+              <option>12th</option>
+            </select>
+            <div *ngIf="instructor.controls['class'].touched">
+              <p class="alert alert-danger" *ngIf="instructor.controls['class'].hasError('required')">Please select class</p>
+          </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label>Section: </label>
+            <select formControlName="section" class="form-control" >
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+            </select>
+            <div *ngIf="instructor.controls['section'].touched">
+              <p class="alert alert-danger" *ngIf="instructor.controls['section'].hasError('required')">Please select section!</p>
+          </div>
+          </div>
+          
+        </div>
+        <div class="form-row my-2">
+            <div class="col">
+                <button class="btn btn-primary" [disabled]="!instructor.valid" (click)="submitInstructor()">Save</button>
+                
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+  
+  

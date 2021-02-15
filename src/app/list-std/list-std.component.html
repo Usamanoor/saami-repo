@@ -1,0 +1,35 @@
+<div class="my-2">
+    <h1 class="header">Student's List</h1>
+
+    <table class="table table-striped table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Section</th>
+            <th scope="col">Instructor</th>
+            <th scope="col">Email</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Address</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let data of studentArr; i as index">
+          <tr>
+            <th scope="row">{{ data.id }}</th>
+            <td>{{ data.fname }}</td>
+            <td>{{ data.courseId }}</td>
+            <td>{{ data.section }}</td>
+            <td>{{ data.instructorId }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.gender }}</td>
+            <td>{{ data.address }}</td>
+            <td><button class="btn btn-danger" (click)="deleteData(data.id)">Delete</button>
+              <button class="btn btn-warning mx-1" (click)="editData(data.id)">Edit</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,46 @@
+<h1 class="header">Student View</h1>
+
+<div class="my-2">
+    <h1 class="header1">Student Details</h1>
+
+    <div class="card shadow" style="width: 18rem;">
+        <img src="https://image.flaticon.com/icons/png/512/67/67902.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Student Details</h5>
+          
+          <button  class="btn btn-primary">Login</button>
+        </div>
+      </div>
+
+
+
+    <table class="table table-striped table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Section</th>
+            <th scope="col">Instructor</th>
+            <th scope="col">Email</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Address</th>
+            
+          </tr>
+        </thead>
+        <tbody >
+          <tr>
+            <th scope="row">{{ newStd?.id }}</th>
+            <td>{{ newStd?.fname }}</td>
+            <td>{{ newStd?.course?.courseName }}</td>
+            <td>{{ newStd?.section }}</td>
+            <td>{{ newStd?.instructor?.fname }}</td>
+            <td>{{ newStd?.email }}</td>
+            <td>{{ newStd?.gender }}</td>
+            <td>{{ newStd?.address }}</td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

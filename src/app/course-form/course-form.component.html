@@ -1,0 +1,92 @@
+<div class="my-2">
+  <h1 class="header">Course Reg Form</h1>
+  <div class="card shadow my-5">
+    <form [formGroup]="course" class="mx-2 my-3">
+      <div class="form-row my-4">
+        <div class="col">
+          <label>Course Name: </label>
+          <input
+          type="text"
+          formControlName="courseName"
+          class="form-control"
+          placeholder="course Fee"
+        />
+        <div *ngIf="course.controls['courseName'].touched">
+          <p
+            class="alert alert-danger"
+            *ngIf="course.controls['courseName'].hasError('required')"
+          >
+            Fee is Required!
+          </p>
+        </div>
+        </div>
+      <div class="col">
+        <label>Course Fee: </label>
+        <input
+          type="text"
+          formControlName="courseFee"
+          class="form-control"
+          placeholder="course Fee"
+        />
+        <div *ngIf="course.controls['courseFee'].touched">
+          <p
+            class="alert alert-danger"
+            *ngIf="course.controls['courseFee'].hasError('required')"
+          >
+            Fee is Required!
+          </p>
+        </div>
+      </div>
+      </div>
+      <!-- date -->
+      <div class="form-row my-4">
+        <div class="col">
+          <label>Staring Date: </label>
+          <input
+          type="date"
+          formControlName="startingDate"
+          class="form-control"
+          placeholder="staring date"
+        />
+        <div *ngIf="course.controls['startingDate'].touched">
+          <p
+            class="alert alert-danger"
+            *ngIf="course.controls['startingDate'].hasError('required')"
+          >
+            Date is Required!
+          </p>
+        </div>
+        </div>
+      <div class="col">
+        <label>Ending Date: </label>
+        <input
+          type="date"
+          formControlName="endingDate"
+          class="form-control"
+          placeholder="ending date"
+        />
+        <div *ngIf="course.controls['endingDate'].touched">
+          <p
+            class="alert alert-danger"
+            *ngIf="course.controls['endingDate'].hasError('required')"
+          >
+            Date is Required!
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <div class="form-row my-2">
+        <div class="col">
+          <button
+            class="btn btn-primary"
+            [disabled]="!course.valid"
+            (click)="postCourseData()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
